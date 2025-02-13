@@ -1,0 +1,35 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "MOVIE",
+      "username": "root",
+      "database": "MYSQL80",
+      "password": "MONale014782!"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "49",
+      "username": "root",
+      "database": "mysql"
+    },
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:carbon_footprint_analysis}/emissions.db",
+      "name": "Emissions"
+    }
+  ]
+}
