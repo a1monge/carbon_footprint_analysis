@@ -15,7 +15,7 @@ This project analyzes a dataset of product carbon emissions, focusing on industr
 
 ---
 
-## **Example Output**
+## **Output**
 Below is an example of the analysis results:
 
 ![Output](emissions.png) <!-- Replace with your actual image file -->
