@@ -30,6 +30,12 @@
       "driver": "SQLite",
       "database": "${workspaceFolder:carbon_footprint_analysis}/emissions.db",
       "name": "Emissions"
+    },
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "Carbon",
+      "database": "${workspaceFolder:carbon_footprint_analysis}/emissions.db"
     }
   ]
 }
