@@ -1,30 +1,31 @@
+markdown
+Copy
 # Analyzing Industry Carbon Emissions
 
-This project analyzes a dataset of product carbon emissions, focusing on industries that contribute to over 75% of global emissions. Using **SQL** and **Visual Studio Code**, the project identifies high-emitting industries, calculates their percentage contributions, and highlights top-emitting products. The goal is to provide actionable insights for sustainability initiatives.
+This project analyzes a dataset of carbon emissions across various industries, focusing on their contributions to global emissions. Using **SQL** and **Visual Studio Code**, the project calculates total emissions, average emissions per capita, and identifies the top-emitting years for each industry. The goal is to provide actionable insights for sustainability initiatives.
 
 ---
 
 ## **Project Overview**
-- **Dataset**: Contains product-level carbon emissions data, including industry, product name, carbon footprint, and upstream/downstream contributions.
+- **Dataset**: Contains industry-level carbon emissions data, including emissions from Agriculture, Buildings, Fuel Exploitation, Industrial Combustion, Power Industry, Processes, Transport, and Waste.
 - **Tools Used**: SQL, Visual Studio Code, SQLite.
 - **Key Insights**:
-  - Total carbon footprint by industry.
-  - Percentage contribution of each industry to global emissions.
-  - Top-emitting products in each industry.
-  - Average upstream, operations, and downstream contributions.
+  - Total emissions by industry across all years.
+  - Average emissions per capita for each industry.
+  - Top-emitting year for each industry.
 
 ---
 
 ## **Output**
 Below is an example of the analysis results:
 
-![Output](emissions.png) <!-- Replace with your actual image file -->
+### **Average Emissions per Capita by Industry**
+![Output](AVG.png)
+
+### **Industry-Wise Total Emissions Across All Years**
+![Output](Total.png)
+
+### **Top Year for Each Industry**
+![Output](TopYear.png)
 
 ---
-
-## **SQL Queries**
-The project uses advanced SQL techniques, including:
-- **Aggregations**: Calculate total carbon footprint by industry.
-- **Window Functions**: Rank top-emitting products in each industry.
-- **CTEs (Common Table Expressions)**: Simplify complex queries.
-- **Subqueries**: Calculate percentage contributions and averages.
