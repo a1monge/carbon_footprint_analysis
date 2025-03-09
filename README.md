@@ -15,22 +15,16 @@ This project analyzes a dataset of carbon emissions across various industries, f
   - Top-emitting year for each industry.
 
 ---
+
 ## **Tables**
 
-**Carbon Emissions Table (Partial Picture)**
+### **Carbon Emissions Table (Partial Picture)**
 ![Table](emissions_table.png)
 
-
-
-
-
-
-
-**Look Up Table**
+### **Look Up Table**
 ![Table](industry_lookup_table.png)
 
-
-
+---
 
 ## **Output**
 Below is an example of the analysis results:
