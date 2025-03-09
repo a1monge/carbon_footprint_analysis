@@ -22,8 +22,14 @@ This project analyzes a dataset of carbon emissions across various industries, f
 
 
 
+
+
+
+
 **Look Up Table**
 ![Table](industry_lookup_table.png)
+
+
 
 
 ## **Output**
