@@ -1,16 +1,40 @@
-
 -- 1. Average Emissions per Capita by Industry
-SELECT l.industry, ROUND(AVG(e.[column_name] / e."Total CO2/cap"), 2) AS AvgEmissionsPerCapita
+SELECT 
+    l.industry, 
+    ROUND(AVG(
+        CASE l.industry
+            WHEN 'Agriculture' THEN e.Agriculture
+            WHEN 'Buildings' THEN e.Buildings
+            WHEN 'Fuel Exploitation' THEN e."Fuel Exploitation"
+            WHEN 'Industrial Combustion' THEN e."Industrial Combustion"
+            WHEN 'Power Industry' THEN e."Power Industry"
+            WHEN 'Processes' THEN e.Processes
+            WHEN 'Transport' THEN e.Transport
+            WHEN 'Waste' THEN e.Waste
+        END / e."Total CO2/cap"), 2) AS AvgEmissionsPerCapita
 FROM emissions e
-JOIN industry_lookup l ON 1=1
+JOIN industry_lookup l ON 1=1  -- Join lookup table to map industries
 GROUP BY l.industry
 ORDER BY AvgEmissionsPerCapita DESC;
 
 -- 2. Industry-Wise Total Emissions Across All Years
 WITH industry_totals AS (
-    SELECT l.industry, SUM(e.[column_name]) AS total_emissions
+    SELECT 
+        l.industry, 
+        SUM(
+            CASE l.industry
+                WHEN 'Agriculture' THEN e.Agriculture
+                WHEN 'Buildings' THEN e.Buildings
+                WHEN 'Fuel Exploitation' THEN e."Fuel Exploitation"
+                WHEN 'Industrial Combustion' THEN e."Industrial Combustion"
+                WHEN 'Power Industry' THEN e."Power Industry"
+                WHEN 'Processes' THEN e.Processes
+                WHEN 'Transport' THEN e.Transport
+                WHEN 'Waste' THEN e.Waste
+            END
+        ) AS total_emissions
     FROM emissions e
-    JOIN industry_lookup l ON 1=1
+    JOIN industry_lookup l ON 1=1  -- Join lookup table to map industries
     GROUP BY l.industry
 ),
 total_footprint AS (
@@ -26,9 +50,22 @@ JOIN total_footprint t ON 1=1
 ORDER BY i.total_emissions DESC;
 
 -- 3. Top Year for Each Industry
-SELECT l.industry, e.Category AS "Top Year", 
-    printf('%d tons', MAX(e.[column_name])) AS Emissions
+SELECT 
+    l.industry, 
+    e.Category AS "Top Year", 
+    printf('%d tons', MAX(
+        CASE l.industry
+            WHEN 'Agriculture' THEN e.Agriculture
+            WHEN 'Buildings' THEN e.Buildings
+            WHEN 'Fuel Exploitation' THEN e."Fuel Exploitation"
+            WHEN 'Industrial Combustion' THEN e."Industrial Combustion"
+            WHEN 'Power Industry' THEN e."Power Industry"
+            WHEN 'Processes' THEN e.Processes
+            WHEN 'Transport' THEN e.Transport
+            WHEN 'Waste' THEN e.Waste
+        END
+    )) AS Emissions
 FROM emissions e
-JOIN industry_lookup l ON 1=1
+JOIN industry_lookup l ON 1=1  -- Join lookup table to map industries
 GROUP BY l.industry
-ORDER BY industry;
+ORDER BY l.industry;
