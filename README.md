@@ -8,8 +8,8 @@ This project analyzes a dataset of carbon emissions across various industries, f
 - **Dataset**: Contains industry-level carbon emissions data, including emissions from Agriculture, Buildings, Fuel Exploitation, Industrial Combustion, Power Industry, Processes, Transport, and Waste.
 - **Tools Used**: SQL, Visual Studio Code, MySQL.
 - **Key Insights**:
-  - Total emissions by industry across all years.
   - Average emissions per capita for each industry.
+  - Industry-Wise Total Emissions Across All Years.
   - Top-emitting year for each industry.
 
 ---
