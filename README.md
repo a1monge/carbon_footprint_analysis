@@ -1,5 +1,3 @@
-markdown
-Copy
 # Analyzing Industry Carbon Emissions
 
 This project analyzes a dataset of carbon emissions across various industries, focusing on their contributions to global emissions. Using **SQL** and **Visual Studio Code**, the project calculates total emissions, average emissions per capita, and identifies the top-emitting years for each industry. The goal is to provide actionable insights for sustainability initiatives.
