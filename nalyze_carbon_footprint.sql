@@ -13,7 +13,7 @@ SELECT
             WHEN 'Waste' THEN e.Waste
         END / e."Total CO2/cap"), 2) AS AvgEmissionsPerCapita
 FROM emissions e
-JOIN industry_lookup l ON 1=1  -- Join lookup table to map industries
+JOIN industry_lookup l ON e.industry = l.industry  
 GROUP BY l.industry
 ORDER BY AvgEmissionsPerCapita DESC;
 
@@ -34,7 +34,7 @@ WITH industry_totals AS (
             END
         ) AS total_emissions
     FROM emissions e
-    JOIN industry_lookup l ON 1=1  -- Join lookup table to map industries
+    JOIN industry_lookup l ON e.industry = l.industry  
     GROUP BY l.industry
 ),
 total_footprint AS (
@@ -46,7 +46,7 @@ SELECT
     printf('%.2f tons', i.total_emissions) AS total_emissions,
     printf('%.2f%%', (i.total_emissions * 100.0 / t.global_total)) AS percent_contribution
 FROM industry_totals i
-JOIN total_footprint t ON 1=1
+JOIN total_footprint t ON 1=1 
 ORDER BY i.total_emissions DESC;
 
 -- 3. Top Year for Each Industry
@@ -66,6 +66,6 @@ SELECT
         END
     )) AS Emissions
 FROM emissions e
-JOIN industry_lookup l ON 1=1  -- Join lookup table to map industries
+JOIN industry_lookup l ON e.industry = l.industry 
 GROUP BY l.industry
 ORDER BY l.industry;
