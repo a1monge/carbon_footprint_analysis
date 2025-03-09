@@ -27,7 +27,7 @@ This project analyzes a dataset of carbon emissions across various industries, f
 ---
 
 ## **Output**
-Below is an example of the analysis results:
+Below is my analysis results:
 
 ### **Average Emissions per Capita by Industry**
 ![Output](AVG.png)
